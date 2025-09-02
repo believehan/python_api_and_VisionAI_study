@@ -13,26 +13,28 @@ bw = ImageEnhance.Color(img).enhance(0.1)
 Sharpness = ImageEnhance.Sharpness(img).enhance(17)
 
 # 3. 결과 시각화
-fig, ax = plt.subplots(1,4, figsize=(10, 5))
+fig, ax = plt.subplots(2,4, figsize=(15, 10))
 # 3-1. 원본 이미지 시각화
-ax[0].imshow(img)
-ax[0].axis('off')
-ax[0].set_title('Original')
+ax[0,0].imshow(img)
+ax[0,0].axis('on')
+ax[0,0].set_title('Original')
 
 # 3-2. 회전 이미지 시각화
-ax[1].imshow(img_rotated)
-ax[1].axis('off')
-ax[1].set_title('Rotated')
+ax[0,1].imshow(img_rotated)
+ax[0,1].axis('off')
+ax[0,1].set_title('Rotated')
 
 # 3-3. 흑백 이미지 시각화
-ax[2].imshow(bw)
-ax[2].axis('off')
-ax[2].set_title('black-White')
+ax[0,2].imshow(bw)
+ax[0,2].axis('off')
+ax[0,2].set_title('black-White')
 
 # 3-4. 선명도 이미지 시각화
-ax[3].imshow(Sharpness)
-ax[3].axis('off')
-ax[3].set_title('Sharpness')
+ax[0,3].imshow(Sharpness)
+ax[0,3].axis('off')
+ax[0,3].set_title('Sharpness')
 
 plt.show()
 # 4. 결과 이미지 저장
+img_rotated.save("./img_rotated.jpg")
+print(f"이미지 저장이 잘 됐습니다.")
