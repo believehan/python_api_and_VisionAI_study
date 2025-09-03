@@ -2,3 +2,5 @@ yolo*
 *.jpg
 *.mp4
 runs
+*.png
+*jpeg
